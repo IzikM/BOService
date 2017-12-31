@@ -12,5 +12,6 @@ export const environment = {
     projectId: 'clientpanelapp-21c7f',
     storageBucket: 'clientpanelapp-21c7f.appspot.com',
     messagingSenderId: '711437654958'
-  }
+  },
+  BEServer: 'http://localhost:8888/'
 };
