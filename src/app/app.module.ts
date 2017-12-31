@@ -26,6 +26,9 @@ import { ClientService } from './services/client.service';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './guards/auth.guard';
+import { BoAuthService } from './services/bo-auth.service';
+import { BoConfigService } from './services/bo-config.service';
+import { ServerSelectComponent } from './components/server-select/server-select.component';
 
 // *Doc* Create routes
 const appRoutes: Routes = [
@@ -52,7 +55,8 @@ const appRoutes: Routes = [
     LoginComponent,
     RegisterComponent,
     SettingsComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ServerSelectComponent
   ],
   imports: [
     BrowserModule,
@@ -67,6 +71,8 @@ const appRoutes: Routes = [
     ClientService,
     AuthService,
     AuthGuard,
+    BoAuthService,
+    BoConfigService,
     SettingsService,
     RegisterGuard
   ],
