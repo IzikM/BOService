@@ -1,9 +1,8 @@
+import { AppRoutesModule } from './app-routes.module';
 import { RegisterGuard } from './guards/register.guard';
 import { SettingsService } from './services/settings.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { RouterModule, Routes } from '@angular/router';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
@@ -30,18 +29,6 @@ import { BoAuthService } from './services/bo-auth.service';
 import { BoConfigService } from './services/bo-config.service';
 import { ServerSelectComponent } from './components/server-select/server-select.component';
 
-// *Doc* Create routes
-const appRoutes: Routes = [
-  { path: '', component: DashboardComponent, canActivate: [AuthGuard] },
-  { path: 'register', component: RegisterComponent, canActivate: [RegisterGuard] },
-  { path: 'login', component: LoginComponent },
-  { path: 'add-client', component: AddClientComponent, canActivate: [AuthGuard] },
-  { path: 'settings', component: SettingsComponent, canActivate: [AuthGuard] },
-  { path: 'client/:id', component: ClientDetailsComponent, canActivate: [AuthGuard] },
-  { path: 'edit-client/:id', component: EditClientComponent, canActivate: [AuthGuard] },
-  { path: '**', component: PageNotFoundComponent }
-];
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,8 +46,8 @@ const appRoutes: Routes = [
     ServerSelectComponent
   ],
   imports: [
+    AppRoutesModule,
     BrowserModule,
-    RouterModule.forRoot(appRoutes),
     AngularFireModule.initializeApp(environment.firebase, 'clientpanel'),
     AngularFireAuthModule,
     FormsModule,
