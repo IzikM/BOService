@@ -28,6 +28,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { BoAuthService } from './services/bo-auth.service';
 import { BoConfigService } from './services/bo-config.service';
 import { ServerSelectComponent } from './components/server-select/server-select.component';
+import { HtmlGetService } from './services/html-get.service';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { ServerSelectComponent } from './components/server-select/server-select.
     BoAuthService,
     BoConfigService,
     SettingsService,
-    RegisterGuard
+    RegisterGuard,
+    HtmlGetService
   ],
   bootstrap: [AppComponent]
 })

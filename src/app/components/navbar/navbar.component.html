@@ -1,32 +1,67 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-primary mb-4">
-  <a class="navbar-brand" href="#">ClientPanel</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
-    aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <a class="navbar-brand" href="#">Pepper</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-    <ul class="navbar-nav mr-auto">
-      <li *ngIf="isLoggenIn" class="nav-item">
-        <a class="nav-link" href="#" routerLink="/">Dashboard</a>
-      </li>
-    </ul>
-    <ul class="navbar-nav ml-auto">
-      <li *ngIf="!isLoggenIn && showRegister" class="nav-item">
-        <a class="nav-link" href="#" routerLink="/register">Register</a>
-      </li>
-      <li *ngIf="!isLoggenIn" class="nav-item">
-        <a class="nav-link" href="#" routerLink="/login">Login</a>
-      </li>
-      <li *ngIf="isLoggenIn" class="nav-item">
-        <a class="nav-link" href="#">{{loggedInUser}}</a>
-      </li>
-      <li *ngIf="isLoggenIn" class="nav-item">
-        <a class="nav-link" href="#" routerLink="/settings">Settings</a>
-      </li>
-      <li *ngIf="isLoggenIn" class="nav-item">
-        <a class="nav-link" href="#" (click)="onLogoutClick()">Logout</a>
-      </li>
-    </ul>
-  </div>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto" id="navbarMain">
+            <li *ngIf="isLoggenIn" class="nav-item">
+                <a class="nav-link" href="#" routerLink="/">Dashboard</a>
+            </li>
+            <li *ngIf="isLoggenIn && showVitality" class="nav-item">
+                <a class="nav-link" href="#" routerLink="/vitality">Vitality</a>
+            </li>
+            <li *ngIf="isLoggenIn && showOtp" class="nav-item">
+                <a class="nav-link" href="#" routerLink="/otp">O.T.P</a>
+            </li>
+            <li *ngIf="isLoggenIn && showTrace" class="nav-item">
+                <a class="nav-link" href="#" routerLink="/trace">Trace</a>
+            </li>
+            <li *ngIf="isLoggenIn && showServices" class="nav-item">
+                <a class="nav-link" href="#" routerLink="/services">Services</a>
+            </li>
+            <li *ngIf="isLoggenIn && showTemplates" class="nav-item">
+                <a class="nav-link" href="#" routerLink="/templates">Templates</a>
+            </li>
+            <li *ngIf="isLoggenIn && showConfig" class="nav-item">
+                <a class="nav-link" href="#" routerLink="/otp">Config</a>
+            </li>
+            <li *ngIf="isLoggenIn && showConfigControl" class="nav-item">
+                <a class="nav-link" href="#" routerLink="/configcontrol">Config Control</a>
+            </li>
+            <li *ngIf="isLoggenIn && showEsbStatistics" class="nav-item">
+                <a class="nav-link" href="#" routerLink="/esbstatistics">Esb Statistics</a>
+            </li>
+            <li *ngIf="isLoggenIn && showWhiteList" class="nav-item">
+                <a class="nav-link" href="#" routerLink="/whitelist">White List</a>
+            </li>
+            <li *ngIf="isLoggenIn && showSendSms" class="nav-item">
+                <a class="nav-link" href="#" routerLink="/sendSms">Send Sms</a>
+            </li>
+            <li *ngIf="isLoggenIn && showSubscriptionTopics" class="nav-item">
+                <a class="nav-link" href="#" routerLink="/topic">Subscription Topics</a>
+            </li>
+            <li *ngIf="isLoggenIn && showRetryControl" class="nav-item">
+                <a class="nav-link" href="#" routerLink="/retry">Retry</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto" id="navbarSide">
+            <li *ngIf="!isLoggenIn && showRegister" class="nav-item">
+                <a class="nav-link" href="#" routerLink="/register">Register</a>
+            </li>
+            <li *ngIf="!isLoggenIn" class="nav-item">
+                <a class="nav-link" href="#" routerLink="/login">Login</a>
+            </li>
+            <li *ngIf="isLoggenIn" class="nav-item">
+                <a class="nav-link" href="#">{{loggedInUser}}</a>
+            </li>
+            <li *ngIf="isLoggenIn" class="nav-item">
+                <a class="nav-link" href="#" routerLink="/settings">Settings</a>
+            </li>
+            <li *ngIf="isLoggenIn" class="nav-item">
+                <a class="nav-link" href="#" (click)="onLogoutClick()">Logout</a>
+            </li>
+        </ul>
+    </div>
 </nav>
