@@ -101,7 +101,31 @@ export class NavbarComponent implements OnInit {
       this.showConfig = true;
         break;
       }
-          default: {
+      case 'ConfigCntrl': {
+        this.showConfigControl = true;
+          break;
+        }
+        case 'EsbStatistics': {
+          this.showEsbStatistics = true;
+            break;
+          }
+          case 'WhiteList': {
+            this.showWhiteList = true;
+              break;
+            }
+            case 'SendSms': {
+              this.showSendSms = true;
+                break;
+              }
+              case 'Topics': {
+                this.showSubscriptionTopics = true;
+                  break;
+                }
+                case 'Retry': {
+                  this.showRetryControl = true;
+                    break;
+                  }
+      default: {
          // statements;
          break;
       }
