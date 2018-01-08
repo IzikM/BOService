@@ -1,11 +1,27 @@
-import { BoConfigService } from './../../services/bo-config.service';
-import { Config } from './../../models/config';
-import { SettingsService } from './../../services/settings.service';
-import { AuthService } from './../../services/auth.service';
-import { FlashMessagesService } from 'angular2-flash-messages';
-import { Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
-import { of } from 'rxjs/observable/of';
+import {
+  BoConfigService
+} from './../../services/bo-config.service';
+import {
+  Config
+} from './../../models/config';
+import {
+  SettingsService
+} from './../../services/settings.service';
+import {
+  AuthService
+} from './../../services/auth.service';
+import {
+  FlashMessagesService
+} from 'angular2-flash-messages';
+import {
+  Router
+} from '@angular/router';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
+import { of
+} from 'rxjs/observable/of';
 
 @Component({
   selector: 'app-navbar',
@@ -44,7 +60,7 @@ export class NavbarComponent implements OnInit {
 
   ) {
     this.boConfigService.getConfigRet(this);
-   }
+  }
 
   ngOnInit() {
     this.authService.getAuth().subscribe(auth => {
@@ -60,7 +76,10 @@ export class NavbarComponent implements OnInit {
 
   onLogoutClick() {
     this.authService.logout();
-    this.flashMessagesService.show('You are logged out', { cssClass: 'alert-success', timeout: 4000 });
+    this.flashMessagesService.show('You are logged out', {
+      cssClass: 'alert-success',
+      timeout: 4000
+    });
     this.router.navigate(['/login']);
   }
 
@@ -76,73 +95,86 @@ export class NavbarComponent implements OnInit {
 
 
   addRoutePage(route: string, pageName: string) {
-    switch ( pageName ) {
-      case 'Vitality': {
-         this.showVitality = true;
-         break;
-      }
-      case 'Otp': {
-        this.showOtp = true;
-        break;
-      }
-      case 'Trace': {
-      this.showTrace = true;
-        break;
-      }
-      case 'Services': {
-      this.showServices = true;
-         break;
-      }
-      case 'Templates': {
-      this.showTemplates = true;
-        break;
-      }
-      case 'Config': {
-      this.showConfig = true;
-        break;
-      }
-      case 'ConfigCntrl': {
-        this.showConfigControl = true;
+    switch (pageName) {
+      case 'Vitality':
+        {
+          this.showVitality = true;
           break;
         }
-        case 'EsbStatistics': {
+      case 'Otp':
+        {
+          this.showOtp = true;
+          break;
+        }
+      case 'Trace':
+        {
+          this.showTrace = true;
+          break;
+        }
+      case 'Services':
+        {
+          this.showServices = true;
+          break;
+        }
+      case 'Templates':
+        {
+          this.showTemplates = true;
+          break;
+        }
+      case 'Config':
+        {
+          this.showConfig = true;
+          break;
+        }
+      case 'ConfigCntrl':
+        {
+          this.showConfigControl = true;
+          break;
+        }
+      case 'EsbStatistics':
+        {
           this.showEsbStatistics = true;
-            break;
-          }
-          case 'WhiteList': {
-            this.showWhiteList = true;
-              break;
-            }
-            case 'SendSms': {
-              this.showSendSms = true;
-                break;
-              }
-              case 'Topics': {
-                this.showSubscriptionTopics = true;
-                  break;
-                }
-                case 'Retry': {
-                  this.showRetryControl = true;
-                    break;
-                  }
-      default: {
-         // statements;
-         break;
-      }
+          break;
+        }
+      case 'WhiteList':
+        {
+          this.showWhiteList = true;
+          break;
+        }
+      case 'SendSms':
+        {
+          this.showSendSms = true;
+          break;
+        }
+      case 'Topics':
+        {
+          this.showSubscriptionTopics = true;
+          break;
+        }
+      case 'Retry':
+        {
+          this.showRetryControl = true;
+          break;
+        }
+      default:
+        {
+          // statements;
+          break;
+        }
     }
 
     if (pageName === 'Wow') {
       document.getElementById(this.navbarId).insertAdjacentHTML(this.insertLocation,
-            '     <li _ngcontent-c1 class="nav-item">' +
-            '         <a _ngcontent-c1 class="nav-link" href="' +
-            route +
-            '" routerLink="' +
-            route +
-            '" ng-reflect-router-link="' +
-            route +
-            '">' +
-            pageName + '</a>' +
-            '     </li>');
+        '     <li _ngcontent-c1 class="nav-item">' +
+        '         <a _ngcontent-c1 class="nav-link" href="' +
+        route +
+        '" routerLink="' +
+        route +
+        '" ng-reflect-router-link="' +
+        route +
+        '">' +
+        pageName + '</a>' +
+        '     </li>');
     }
   }
 }
